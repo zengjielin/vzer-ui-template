@@ -43,6 +43,7 @@ vzer-ui-template
 ├─ package.json
 └─ README.md
 ```
+### 关于npm发包问题，自行决解，问题也很简单，不懂就多查找资料吧。 
 
 ### 快速入门教程
 
