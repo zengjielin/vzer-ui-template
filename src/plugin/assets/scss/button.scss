@@ -1,0 +1,113 @@
+$default: #ddd;
+$primary: #e36789;
+$success: #6fb7c6;
+$info: #ed7ab5;
+$warning: #f2a727;
+$error: #d9534f;
+$white: #fff;
+
+@mixin btn-type($color, $bgColor) {
+  color: #fff;
+  border-color: $color;
+  background: $bgColor;
+  font-weight: 400;
+
+  &:hover {
+    background-color: lighten($color, 5%);
+    border-color: lighten($color, 5%);
+  }
+
+  &:active {
+    background-color: darken($color, 2%);
+    border-color: darken($color, 2%);
+  }
+
+  &:disabled {
+
+    &:hover,
+    &:active {
+      color: #999;
+      cursor: not-allowed;
+      border-color: #ddd;
+      background: #eee;
+    }
+  }
+}
+
+// &替换父选择器,#{}插值
+.vzer-btn {
+  display: inline-block;
+  text-align: center;
+  cursor: pointer;
+  border: 1px solid #ccc;
+  padding: 0 10px;
+  font-size: 14px;
+  line-height: 30px;
+  height: 32px;
+  border-radius: 4px;
+  outline: none;
+  margin: 5px;
+
+  &:disabled {
+    color: #999;
+    cursor: not-allowed;
+    border-color: #ddd;
+    background: #eee;
+  }
+
+  &-default {
+    @include btn-type($default, $default);
+    color: #606266;
+    background: #FFF;
+    font-weight: 400;
+  }
+
+  &-primary {
+    @include btn-type($primary, $primary);
+  }
+
+  &-success {
+    @include btn-type($success, $success);
+  }
+
+  &-error {
+    @include btn-type($error, $error);
+  }
+
+  &-warning {
+    @include btn-type($warning, $warning);
+  }
+
+  &-info {
+    @include btn-type($info, $info);
+  }
+
+  &-small {
+    padding: 0 5px;
+    font-size: 12px;
+    line-height: 20px;
+    height: 24px;
+  }
+
+  &-medium {
+    padding: 0 20px;
+    font-size: 14px;
+    line-height: 34px;
+    height: 36px;
+  }
+
+  &-large {
+    padding: 0 28px;
+    font-size: 14px;
+    line-height: 38px;
+    height: 40px;
+  }
+
+  &-circle {
+    border-radius: 28px;
+  }
+
+  &-rectangle {
+    border-radius: 0px;
+  }
+}
